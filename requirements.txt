@@ -1,0 +1,23 @@
+# Data Handling & Scientific Computing
+numpy==1.26.4
+pandas==2.2.2
+scipy==1.13.0
+
+# Machine Learning & Deep Learning
+tensorflow==2.16.1
+torch==2.3.0
+torchvision==0.18.0
+scikit-learn==1.4.2
+imbalanced-learn==0.12.2
+xgboost==2.0.3
+shap==0.45.0
+
+# Kalman Filter
+pykalman==0.9.5
+
+# Image Processing
+Pillow==10.3.0
+
+# Plotting & Visualization
+matplotlib==3.8.4
+seaborn==0.13.2

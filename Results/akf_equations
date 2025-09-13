@@ -1,0 +1,90 @@
+I'll process the data and generate the requested equations, model architecture, and adaptive Kalman filter modifications based on weather and motion. I'll also plot the evaluation metrics for the testing data. Let me start by analyzing the provided references and files.
+
+I'll first extract relevant equations and model details from the provided references, then integrate weather recognition into the adaptive Kalman filter framework. Additionally, I'll analyze the testing data to generate evaluation metric plots. Let's begin.
+
+### Step 1: Weather Recognition Equations  
+From the references, a CNN-GRU model is used for vehicle motion recognition. We can extend this approach to weather recognition by adding weather-related features (e.g., temperature, humidity, pressure, visibility).  
+
+The weather recognition model can be formulated as:  
+
+\[
+M_{w_t} = f(M_{w_{train}} * K + b) = f(\sum M_{w_{train}} * K_t + b_t)
+\]
+
+where:  
+- \(M_{w_t}\) is the result of convolution for weather recognition.  
+- \(M_{w_{train}}\) is the input weather data.  
+- \(K\) is the convolution kernel.  
+- \(b\) is the bias.  
+- \(f\) is the activation function (ReLU for non-linearity).  
+- \(t\) represents the time step.  
+
+The CNN-GRU model for weather classification outputs a probability distribution over weather states (e.g., clear, rainy, foggy).  
+
+---
+
+### Step 2: Adaptive Kalman Filter Modifications Based on Weather & Motion  
+
+**Motion-based Adaptation:**  
+- The process noise covariance \(Q\) and measurement noise covariance \(R\) are adapted based on motion.  
+- Faster motion (e.g., high velocity, turns) increases uncertainty, requiring an increase in \(Q\).  
+- Stationary or slow motion reduces \(Q\).  
+
+\[
+Q' = \alpha Q, \quad R' = \beta R
+\]
+
+where:  
+- \(\alpha\) and \(\beta\) are scaling factors based on motion.  
+- For high-speed motion, \(\alpha > 1\), \(\beta < 1\).  
+- For stationary motion, \(\alpha < 1\), \(\beta > 1\).  
+
+**Weather-based Adaptation:**  
+- Poor visibility (fog, rain) reduces GNSS accuracy, increasing \(R\).  
+- Wet road conditions affect accelerometer readings, increasing \(Q\).  
+
+\[
+Q' = Q + \gamma W_Q, \quad R' = R + \delta W_R
+\]
+
+where:  
+- \(W_Q\) and \(W_R\) are weather-dependent uncertainty factors.  
+- \(\gamma\) and \(\delta\) scale the contribution of weather uncertainty.  
+- Values for \(Q\) and \(R\) adapt dynamically to sensor reliability in different weather conditions.  
+
+---
+
+### Step 3: Model Architecture  
+
+The combined CNN-GRU model processes both motion and weather data to generate improved adaptive Kalman filter predictions. The architecture consists of:  
+
+1. **CNN Layers**  
+   - Extract spatial features from weather and motion data.  
+   - Reduce dimensionality for GRU processing.  
+
+2. **GRU Layers**  
+   - Capture temporal dependencies in sensor data.  
+   - Output refined motion/weather classification.  
+
+3. **Kalman Filter Adaptation**  
+   - Modify \(Q\) and \(R\) dynamically based on CNN-GRU outputs.  
+
+---
+
+### Step 4: Evaluation Metrics  
+
+I'll now process the testing data and generate plots for:  
+- RMSE  
+- MAE  
+- Accuracy of weather recognition  
+- Kalman filter state estimation error  
+
+Let me generate these now.
+
+I'll now analyze the testing data and generate plots for the evaluation metrics, including RMSE, MAE, weather recognition accuracy, and Kalman filter state estimation error. Let me process the data and provide the results.
+
+I'll process the provided data files, extract relevant evaluation metrics, and generate the required plots. Let me first inspect the data format to determine the necessary preprocessing steps.
+
+I'll load and analyze the data from the uploaded files to check their structure before proceeding with evaluation metric calculations and visualizations.
+
+The uploaded files appear to be images, not numerical datasets. Please upload the relevant CSV files containing sensor readings, motion data, or weather predictions so I can compute evaluation metrics and generate the required plots.
